@@ -9,7 +9,7 @@ const siteContent = {
         "img-src": "img/logo.png"
     },
     "cta": {
-        "h1": "DOM Is Awesome",
+        "h1": "DOM <br>Is<br> Awesome",
         "button": "Get Started",
         "img-src": "img/header-img.png"
     },
@@ -41,15 +41,41 @@ const siteContent = {
 
 //Navigation
 let logo = document.getElementById("logo-img");
-let anchorTagsNav = document.querySelectorAll("nav a")
-const contents = Object.values(siteContent.nav)
+let anchorTagsNav = document.querySelectorAll("nav a");
+let contents = Object.values(siteContent['nav']);
 for (let i = 0; i < anchorTagsNav.length; i++) {
     anchorTagsNav[i].textContent = contents[i]
-}
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+};
 
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //CTA
-let ctaLogo = document.getElementById('cta-img')
-logo.setAttribute('src', siteContent["nav"]["img-src"])
-ctaLogo.setAttribute('src', siteContent["cta"]["img-src"])
+let ctaLogo = document.getElementById('cta-img');
+ctaLogo.setAttribute('src', siteContent["cta"]["img-src"]);
+let h1 = document.querySelector('h1');
+h1.innerHTML = siteContent['cta']['h1'];
+let button = document.querySelector('button')
+button.textContent = siteContent['cta']['button']
+
+//Main Content
+let middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+let h4 = document.querySelectorAll('h4');
+let mainContentTitles = Object.values(siteContent['main-content']);
+for (let i = 0; i < h4.length; i++) {
+    h4[i].textContent = mainContentTitles[i]
+};
+let p = document.querySelectorAll('p');
+let mainContent = Object.values(siteContent['main-content']);
+for (let i = 0; i < p.length; i++) {
+    p[i].textContent = mainContent[i]
+};
+
+//Contact
+h4.textContent = siteContent['contact']['contact-h4'];
+p.textContent = siteContent['contact']['address'];
+p.textContent = siteContent['contact']['phone'];
+p.textContent = siteContent['contact']['email'];
+//Footer
+let footer = document.querySelector('footer');
+footer.textContent = siteContent['footer']['copyright'];
