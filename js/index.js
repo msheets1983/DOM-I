@@ -48,6 +48,21 @@ for (let i = 0; i < anchorTagsNav.length; i++) {
     anchorTagsNav[i].textContent = contents[i]
 };
 
+anchorTagsNav.forEach(function(currentValue) {
+    currentValue.style.color = 'green';
+})
+
+let nav = document.querySelector('nav')
+let newATag = document.createElement('a');
+newATag.textContent = 'Link1'
+nav.prepend(newATag);
+
+let newATag2 = document.createElement('a');
+newATag2.textContent = 'Link2'
+nav.appendChild(newATag2);
+
+newATag2.style.color = 'green';
+newATag.style.color = 'green';
 
 //CTA
 let ctaLogo = document.getElementById('cta-img');
@@ -75,7 +90,13 @@ mainParagraphs[3].textContent = siteContent['main-content']['product-content'];
 mainParagraphs[4].textContent = siteContent['main-content']['vision-content'];
 
 //Contact
+let contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
 
+let contactP = document.querySelectorAll('.contact p');
+contactP[0].textContent = siteContent['contact']['address'];
+contactP[1].textContent = siteContent['contact']['phone'];
+contactP[2].textContent = siteContent['contact']['email'];
 
 //Footer
 let footer = document.querySelector('footer p');
